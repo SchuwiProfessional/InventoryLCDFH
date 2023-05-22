@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct RegisterView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @AppStorage ("uid") var userID: String = ""
     
     @Binding var currentShowingView: String
     
@@ -105,6 +107,19 @@ struct RegisterView: View {
                 
                 
                 Button {
+                    
+                    Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                        
+                        if let error = error {
+                            print(error)
+                            return
+                        }
+                        
+                        if let authResult = authResult {
+                            print(authResult.user.uid)
+                            userID = authResult.user.uid
+                        }
+                    }
                     
                 } label: {
                     Text("Crear Administrador")
