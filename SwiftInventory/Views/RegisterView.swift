@@ -11,6 +11,7 @@ import FirebaseAuth
 struct RegisterView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var showPassword: Bool = false
     @AppStorage ("uid") var userID: String = ""
     
     @Binding var currentShowingView: String
@@ -72,17 +73,20 @@ struct RegisterView: View {
                 .padding()
                 
                 HStack {
-                    Image(systemName: "lock")
-                    SecureField("password", text: $password )
-                    
-                    Spacer()
-                    
-                    if(password.count != 0) {
-                        Image(systemName: isValidPassword(password) ? "checkmark" : "xmark")
-                            .foregroundColor(isValidPassword(password) ? .green : .red)
-                    }
-                    
-                }
+                           Image(systemName: "lock")
+                           
+                           if showPassword {
+                               TextField("password", text: $password)
+                           } else {
+                               SecureField("password", text: $password)
+                           }
+                           
+                           Button(action: {
+                               showPassword.toggle()
+                           }) {
+                               Image(systemName: showPassword ? "eye.fill" : "eye.slash.fill")
+                           }
+                       }
                 .foregroundColor(.white)
                 .padding()
                 .overlay(

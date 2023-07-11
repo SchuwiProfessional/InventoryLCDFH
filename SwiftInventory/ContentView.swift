@@ -102,8 +102,8 @@ struct ContentView: View {
                 }
 
                 .tabItem {
-                    Image(systemName: "bell")
-                    Text("Notificaciones")
+                    Image(systemName: "exclamationmark.triangle")
+                    Text("Alertas")
                 }
                 .tag(1)
                 

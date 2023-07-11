@@ -105,9 +105,9 @@
 		35FFA49C2A0AEC1700B6D0F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				35FFA4A32A0AFD8C00B6D0F1 /* AuthView.swift */,
 				35FFA49A2A0AE81500B6D0F1 /* LoginView.swift */,
 				35FFA4A02A0AFA4300B6D0F1 /* RegisterView.swift */,
-				35FFA4A32A0AFD8C00B6D0F1 /* AuthView.swift */,
 				352629922A16D1E400327647 /* ProductDetailsView.swift */,
 				352629942A1719BA00327647 /* ProductEditView.swift */,
 			);
