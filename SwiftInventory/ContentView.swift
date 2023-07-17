@@ -17,7 +17,8 @@ struct ContentView: View {
     @State var presentAddProductSheet = false
     @State private var searchText = ""
     @State var lowStockProducts: [Product] = []
-    
+    @StateObject private var registrosViewModel = NoteViewModel()
+    @State private var newNote = ""
     
     
     private var addButton: some View {
@@ -100,12 +101,59 @@ struct ContentView: View {
                         }
                     }
                 }
-
+                
                 .tabItem {
                     Image(systemName: "exclamationmark.triangle")
                     Text("Alertas")
                 }
                 .tag(1)
+                
+                
+                VStack {
+                    List(registrosViewModel.notes.sorted(by: { $0.timestamp > $1.timestamp })) { note in
+                        VStack(alignment: .leading) {
+                            Text(note.note)
+                                .font(.headline)
+                            Text(note.timestamp, style: .date)
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    .navigationBarTitle("Registro")
+                    
+                    VStack {
+                        Text("Nuevo registro")
+                            .font(.headline)
+                            .padding(.bottom, 4)
+                        
+                        TextField("Añada el registro", text: $newNote)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.bottom, 8)
+                        
+                        Button(action: {
+                            let note = Note(note: newNote, timestamp: Date())
+                            registrosViewModel.addNote(note)
+                            newNote = ""
+                        }) {
+                            Text("Agregar")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 8)
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
+                        .disabled(newNote.isEmpty)
+                    }
+                    .padding()
+                }
+                .onAppear {
+                    registrosViewModel.fetchNotes()
+                }
+                .tabItem {
+                    Image(systemName: "note.text.badge.plus")
+                    Text("Registros")
+                }
                 
                 List {
                     Section {
@@ -155,12 +203,12 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "person")
                     Text("Perfil")
-                }.tag(2)
-                
+                }.tag(3)
             }
         }
     }
 }
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
