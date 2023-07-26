@@ -18,6 +18,8 @@
 		352629932A16D1E400327647 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352629922A16D1E400327647 /* ProductDetailsView.swift */; };
 		352629952A1719BA00327647 /* ProductEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352629942A1719BA00327647 /* ProductEditView.swift */; };
 		352629972A17315300327647 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352629962A17315300327647 /* ProductViewModel.swift */; };
+		35D189D62A61E49100AB85E7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D189D52A61E49100AB85E7 /* Note.swift */; };
+		35D189D82A61E5B400AB85E7 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D189D72A61E5B400AB85E7 /* NoteViewModel.swift */; };
 		35FFA4862A0AE2FC00B6D0F1 /* SwiftInventoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFA4852A0AE2FC00B6D0F1 /* SwiftInventoryApp.swift */; };
 		35FFA4882A0AE2FC00B6D0F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FFA4872A0AE2FC00B6D0F1 /* ContentView.swift */; };
 		35FFA48A2A0AE2FD00B6D0F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35FFA4892A0AE2FD00B6D0F1 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		352629922A16D1E400327647 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		352629942A1719BA00327647 /* ProductEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEditView.swift; sourceTree = "<group>"; };
 		352629962A17315300327647 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		35D189D52A61E49100AB85E7 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		35D189D72A61E5B400AB85E7 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		35FFA4822A0AE2FC00B6D0F1 /* SwiftInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35FFA4852A0AE2FC00B6D0F1 /* SwiftInventoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftInventoryApp.swift; sourceTree = "<group>"; };
 		35FFA4872A0AE2FC00B6D0F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				352629792A166E8D00327647 /* Product.swift */,
 				352629872A16B74D00327647 /* ProductsViewModel.swift */,
 				352629962A17315300327647 /* ProductViewModel.swift */,
+				35D189D52A61E49100AB85E7 /* Note.swift */,
+				35D189D72A61E5B400AB85E7 /* NoteViewModel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,7 +167,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					35FFA4812A0AE2FC00B6D0F1 = {
 						CreatedOnToolsVersion = 14.3;
@@ -211,6 +217,7 @@
 			files = (
 				35FFA49B2A0AE81500B6D0F1 /* LoginView.swift in Sources */,
 				35FFA4A12A0AFA4300B6D0F1 /* RegisterView.swift in Sources */,
+				35D189D82A61E5B400AB85E7 /* NoteViewModel.swift in Sources */,
 				35FFA4A42A0AFD8C00B6D0F1 /* AuthView.swift in Sources */,
 				35FFA4882A0AE2FC00B6D0F1 /* ContentView.swift in Sources */,
 				35FFA49F2A0AF69700B6D0F1 /* String.swift in Sources */,
@@ -220,6 +227,7 @@
 				352629882A16B74D00327647 /* ProductsViewModel.swift in Sources */,
 				3526297A2A166E8D00327647 /* Product.swift in Sources */,
 				352629932A16D1E400327647 /* ProductDetailsView.swift in Sources */,
+				35D189D62A61E49100AB85E7 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +270,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -322,6 +331,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
